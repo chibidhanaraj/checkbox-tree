@@ -1,0 +1,104 @@
+{
+  "zones": [{
+    "name": "South Zone",
+    "id": "001South",
+    "districts": [{
+      "name": "Karur",
+      "id": "001SouthKarur",
+      "divisions": [{
+        "name": "Karur City",
+        "id": "001SouthKarurKarurCity",
+        "beatAreas": [{
+          "name": "Jawahar Bazaar",
+          "id": "001SouthKarurKarurCityJawaharBazaar"
+        }, {
+          "name": "Vaiyapuri Nagar",
+          "id": "001SouthKarurKarurCityVaiyapuriNagar"
+        }]
+      }, {
+        "name": "Karur Outer",
+        "id": "001SouthKarurKarurOuter",
+        "beatAreas": [{
+          "name": "Velayuthampalayam",
+          "id": "001SouthKarurKarurOuterVelayuthampalayam"
+        }, {
+          "name": "Puliyur",
+          "id": "001SouthKarurKarurOuterPuliyur"
+        }]
+      }]
+    }, {
+      "name": "Erode",
+      "id": "001SouthErode",
+      "divisions": [{
+        "name": "Erode City",
+        "id": "001SouthErodeErodeCity",
+        "beatAreas": [{
+          "name": "Brough Road",
+          "id": "001SouthErodeErodeCityBroughRoad"
+        }, {
+          "name": "Cauvery Road",
+          "id": "001SouthErodeErodeCityCauveryRoad"
+        }]
+      }, {
+        "name": "Erode Outer",
+        "id": "001SouthErodeErodeOuter",
+        "beatAreas": [{
+          "name": "Perundurai",
+          "id": "001SouthErodeErodeOuterPerundurai"
+        }, {
+          "name": "Gobichettipalayam",
+          "id": "001SouthErodeErodeOuterGobichettipalayam"
+        }]
+      }]
+    }]
+  }, {
+    "name": "North Zone",
+    "id": "001North",
+    "districts": [{
+      "name": "Chennai",
+      "id": "001NorthChennai",
+      "divisions": [{
+        "name": "Chennai City",
+        "id": "001NorthChennaiChennaiCity",
+        "beatAreas": [{
+          "name": "Velachery",
+          "id": "001NorthChennaiChennairCityVelachery"
+        }, {
+          "name": "Guindy",
+          "id": "001NorthChennaiChennaiCityGuindy"
+        }]
+      }, {
+        "name": "Chennai Outer",
+        "id": "001NorthChennaiChennaiOuter",
+        "beatAreas": [{
+          "name": "Chengalpattu",
+          "id": "001NorthChennaiChennaiOuterChengalpattu"
+        }, {
+          "name": "Avadi",
+          "id": "001NorthChennaiChennaiOuterAvadi"
+        }]
+      }]
+    }, {
+      "name": "Kancheepuram",
+      "id": "001NorthKancheepuram",
+      "divisions": [{
+        "name": "Kancheepuram City",
+        "id": "001NorthKancheepuramKancheepuramCity",
+        "beatAreas": [{
+          "name": "Sakthi Nagar",
+          "id": "001NorthKancheepuramKancheepuramCitySakthiNagar"
+        }, {
+          "name": "Gayathiri Nagar",
+          "id": "001NorthKancheepuramKancheepuramCityGayathiriNagar"
+        }]
+      }, {
+        "name": "Kancheepuram Outer",
+        "id": "001NorthKancheepuramKancheepuramOuter",
+        "beatAreas": [{
+          "name": "Sriperumbadhur",
+          "id": "001NorthErodeErodeOuterSriperumbadhur"
+        }]
+      }]
+    }]
+  }]
+}
