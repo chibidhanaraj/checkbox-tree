@@ -1,10 +1,10 @@
 import React from 'react';
 import Checkbox from './Checkbox';
+import _ from "lodash";
 
 class BeatAreas extends React.Component {  
   constructor(props) {
     super(props);
-    console.log(props)
     this.state = {
       beatAreaCheckboxes: props.beatAreas.reduce(
         (beatAreas, beatArea) => ({
@@ -14,7 +14,31 @@ class BeatAreas extends React.Component {
         {}
       ),
     };
-  }  
+  } 
+  
+  componentDidUpdate(prevProps) {
+    if (!this.props.isDivisionChecked && (this.props.isDivisionChecked !== prevProps.isDivisionChecked)) {
+      this.unCheckBeatAreaOnDivisionUncheck()
+    }
+  }
+
+  unCheckBeatAreaOnDivisionUncheck = () => {
+    let beatAreaCheckboxes = _.cloneDeep(this.state.beatAreaCheckboxes);
+    Object.keys(beatAreaCheckboxes).forEach(key => {
+      beatAreaCheckboxes[key] = false;
+    });
+
+    this.setState({
+      beatAreaCheckboxes
+    })
+  }
+
+  updateDivisionCheckBoxOnAtleastOneSelection = () => {
+    let beatAreaCheckboxes = _.cloneDeep(this.state.beatAreaCheckboxes);
+    let isAtleastOneBeatAreaChecked = Object.values(beatAreaCheckboxes).some(isBeatAreaChecked => isBeatAreaChecked === true)
+    
+    this.props.isAtleastOneBeatAreaChecked(isAtleastOneBeatAreaChecked, this.props.divisionId)
+  }
 
   handleBeatAreaCheckboxChange = (e) => {
     const { id } = e.target;
@@ -24,7 +48,12 @@ class BeatAreas extends React.Component {
         ...prevState.beatAreaCheckboxes,
         [id]: !prevState.beatAreaCheckboxes[id]
       }
-    }));
+    }),
+        //Callback
+    () => this.updateDivisionCheckBoxOnAtleastOneSelection()
+  );
+
+    
   };
 
   render() {

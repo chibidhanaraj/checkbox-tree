@@ -27,6 +27,14 @@ class Zones extends React.Component {
     }));
   };
 
+  handleZoneCheckboxOnDistrictCheckboxChange = (isAtleastOneDistrictChecked = false, zoneId) => {
+    this.setState(prevState => ({
+      zoneCheckboxes: {
+        ...prevState.zoneCheckboxes,
+        [zoneId]: isAtleastOneDistrictChecked
+      }
+    }));
+  }
 
   render() {
     const { zones } = this.props;
@@ -39,7 +47,10 @@ class Zones extends React.Component {
             checked={this.state.zoneCheckboxes[zone.id]}
             onCheckboxChange={this.handleZoneCheckboxChange}
           />
-          {zone.districts && <Districts districts={zone.districts} />}
+          {zone.districts && <Districts districts={zone.districts} 
+                                        zoneId={zone.id} 
+                                        isZoneChecked={this.state.zoneCheckboxes[zone.id]}
+                                        isAtleastOneDistrictChecked={this.handleZoneCheckboxOnDistrictCheckboxChange} />}
         </ul>
       );
     });
